@@ -80,7 +80,6 @@ function setLanguage(next) {
   document.querySelector('meta[property="og:title"]').content = copy[language].title;
   document.title = copy[language].title;
   updateMotionLabel();
-  try { localStorage.setItem('cyprinus-language', language); } catch { /* Storage is optional. */ }
 }
 function updateMotionLabel() {
   const button = document.querySelector('#motion-toggle');
@@ -90,8 +89,29 @@ function updateMotionLabel() {
   document.querySelector('#motion-icon').textContent = paused ? '▷' : 'Ⅱ';
 }
 window.addEventListener('sky-motion-change', updateMotionLabel);
-let initialLanguage = 'zh';
-try { initialLanguage = localStorage.getItem('cyprinus-language') || 'zh'; } catch { /* Use Chinese by default. */ }
-setLanguage(initialLanguage);
-languageButton.addEventListener('click', () => setLanguage(language === 'zh' ? 'en' : 'zh'));
+function normalizeLanguage(value) {
+  if (/^zh(?:-|$)/i.test(value || '')) return 'zh';
+  if (/^en(?:-|$)/i.test(value || '')) return 'en';
+  return null;
+}
+function resolveLanguage() {
+  const requested = normalizeLanguage(new URL(location.href).searchParams.get('lang'));
+  if (requested) return requested;
+  try {
+    const saved = normalizeLanguage(localStorage.getItem('cyprinus-language'));
+    if (saved) return saved;
+  } catch { /* Browser language still works without storage. */ }
+  // Chinese browsers receive Chinese; all other first-time visitors get English.
+  return /^zh(?:-|$)/i.test(navigator.languages?.[0] || navigator.language || '') ? 'zh' : 'en';
+}
+setLanguage(resolveLanguage());
+languageButton.addEventListener('click', () => {
+  const next = language === 'zh' ? 'en' : 'zh';
+  const url = new URL(location.href);
+  url.searchParams.set('lang', next);
+  history.pushState(null, '', url);
+  try { localStorage.setItem('cyprinus-language', next); } catch { /* Storage is optional. */ }
+  setLanguage(next);
+});
+window.addEventListener('popstate', () => setLanguage(resolveLanguage()));
 document.querySelector('#year').textContent = new Date().getFullYear();

@@ -91,9 +91,9 @@
     const mobile = width <= 800;
     const base = ctx.createLinearGradient(width * 0.48, 0, width * 0.36, height);
     base.addColorStop(0, '#080f29');
-    base.addColorStop(0.30, '#101830');
-    base.addColorStop(0.58, '#171c35');
-    base.addColorStop(0.83, '#222038');
+    base.addColorStop(0.30, '#101b41');
+    base.addColorStop(0.58, '#19204b');
+    base.addColorStop(0.83, '#292041');
     base.addColorStop(1, '#0d1528');
     ctx.fillStyle = base;
     ctx.fillRect(0, 0, width, height);
@@ -163,7 +163,7 @@
   function buildStars() {
     const random = randomGenerator(481516);
     const mobile = width <= 800;
-    const count = Math.round(clamp(width * height / 9800, 48, 145));
+    const count = Math.round(clamp(width * height / 9800, 64, 145));
     const result = [];
     for (let i = 0; i < count; i += 1) {
       const x = random();
@@ -172,12 +172,14 @@
       // Stars disappear naturally into the bright western dusk.
       const darkness = clamp(.90 - y * .94 + x * .43, .08, 1);
       if (random() > darkness) continue;
-      const upperQuiet = lerp(mobile ? .10 : .28, 1, smoothstep(.40, .65, y));
-      const textQuiet = !mobile && x > .51 && y > .17 && y < .68 ? .28 : 1;
+      // Keep stars visible on small screens: the former 10% multiplier,
+      // combined with subpixel radii and twinkling, made them disappear.
+      const upperQuiet = lerp(.85, 1, smoothstep(.40, .65, y));
+      const textQuiet = !mobile && x > .51 && y > .17 && y < .68 ? .55 : 1;
       result.push({
         x, y,
-        radius: .32 + Math.pow(random(), 3) * .76,
-        alpha: (.23 + random() * .38) * darkness * upperQuiet * textQuiet,
+        radius: .95 + Math.pow(random(), 2) * .70,
+        alpha: (.70 + random() * .28) * Math.max(.65, darkness) * upperQuiet * textQuiet,
         phase: random() * Math.PI * 2,
         speed: .35 + random() * .55,
         warm: random() > .78,

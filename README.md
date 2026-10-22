@@ -20,7 +20,7 @@ python3 -m http.server 4173 --bind 127.0.0.1
 - `assets/`：网站图标与分享图。
 - `profile/README.md` 和 `profile/banner.svg`：GitHub 个人资料页的内容副本。
 
-Language defaults to Chinese; the switch saves the visitor’s preference locally. The page remains readable if JavaScript or browser storage is unavailable.
+Language priority: `?lang=en` / `?lang=zh`, then an explicitly saved choice, then the browser language (Chinese for Chinese browsers, English otherwise). Switching languages updates the URL without reloading and preserves other parameters and the section anchor. The page remains readable if JavaScript or browser storage is unavailable.
 
 ## GitHub Pages
 
