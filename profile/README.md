@@ -3,9 +3,13 @@
 </p>
 
 <p align="center">
-  Singapore · Shopee<br />
+  Singapore<br />
+  曾就职于 Shopee 与 ByteDance (AML) / Previously at Shopee &amp; ByteDance (AML)<br />
   <a href="https://cyprinus12138.github.io/">个人主页 / Website</a> ·
-  <a href="https://github.com/Cyprinus12138?tab=repositories">开源项目 / Repositories</a>
+  <a href="https://github.com/Cyprinus12138?tab=repositories">开源项目 / Repositories</a> ·
+  <a href="https://x.com/mr_cyprinus">X</a> ·
+  <a href="https://huggingface.co/Tristan12138">Hugging Face</a> ·
+  <a href="https://scholar.google.com/citations?hl=en&amp;user=aPVNnf8AAAAJ">Google Scholar</a>
 </p>
 
 ### 你好，我是 Mr.Cyprinus. / Hi, I'm Mr.Cyprinus.

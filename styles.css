@@ -24,9 +24,9 @@ p, h1, h2, h3, figure { margin: 0; }
 .wordmark svg circle { fill: none; stroke: #edc49d66; }
 .wordmark small { display: block; font: 7px var(--mono); letter-spacing: 2.1px; color: #c7bfd4; margin-top: 5px; }
 .wordmark-dot { color: var(--gold); }
-nav { display: flex; gap: 32px; align-items: center; font-size: 12px; }
-nav > a { color: #ded7eb; padding: 10px 0; transition: color .2s; }
-nav > a:hover { color: var(--gold); }
+.site-header nav { display: flex; gap: 32px; align-items: center; font-size: 12px; }
+.site-header nav > a { color: #ded7eb; padding: 10px 0; transition: color .2s; }
+.site-header nav > a:hover { color: var(--gold); }
 .language-toggle { color: #ede7f3; border: 1px solid #e6daf033; border-radius: 4px; background: #0e15302e; display: flex; gap: 8px; align-items: center; padding: 8px 11px; font: 10px var(--mono); }
 .language-toggle > span:first-child { border-right: 1px solid #e6daf033; padding-right: 8px; font-size: 12px; }
 .sky-stage { min-height: 800px; height: min(920px, 100svh); position: relative; overflow: hidden; isolation: isolate; background: radial-gradient(ellipse at 0% 85%, #ffc473 0, #c45268 24%, #46317d 46%, transparent 73%), linear-gradient(145deg, #211d52, #0a153c 70%, #080e20); }
@@ -125,11 +125,13 @@ html[lang='en'] .section-heading h2, html[lang='en'] .about-section h2, html[lan
 .about-facts strong { font: 11px var(--mono); text-align: right; color: #c9bfd8; }
 .connect-section { display: flex; align-items: center; justify-content: space-between; padding: 75px 0 83px; gap: 40px; }
 .connect-section h2 { font-size: 36px; }
-.connect-section p:last-child { margin-top: 20px; color: #a59ab7; font-size: 12px; }
+.connect-section h2 + p { margin-top: 20px; color: #a59ab7; font-size: 12px; }
 .connect-button { display: flex; align-items: center; gap: 16px; font-size: 12px; border: 1px solid #bf93a744; border-radius: 3px; padding: 20px 24px; color: #e0b7ae; transition: background .2s; flex-shrink: 0; }
 .connect-button:hover { background: #b57d9b12; }
 .connect-button svg { width: 20px; height: 20px; }
 .connect-button > span:last-child { margin-left: 22px; font-size: 20px; }
+.connect-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 26px; margin-top: 18px; }
+.connect-links-label { font: 9px var(--mono); letter-spacing: 1.5px; color: #807d9d; margin-right: -4px; }
 footer { border-top: 1px solid var(--line); padding: 26px 0 30px; display: flex; justify-content: space-between; align-items: center; gap: 20px; font-size: 9px; color: #8c809f; }
 .footer-name { font-size: 11px; color: #c7b7d5; }
 .footer-name > span { font-size: 9px; color: #8c809f; margin-left: 8px; }
@@ -153,7 +155,7 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 30px; display: flex;
 }
 @media (max-width: 800px) {
   .site-header { height: 92px; }
-  nav { gap: 24px; }
+  .site-header nav { gap: 24px; }
   .sky-stage { height: 980px; }
   .hero-quote { top: 124px; }
   .hero-copy { width: calc(100% - 72px); max-width: none; left: 36px; top: 213px; text-align: center; }
@@ -181,8 +183,8 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 30px; display: flex;
   .wordmark { font-size: 21px; gap: 7px; }
   .wordmark svg { width: 26px; height: 26px; }
   .wordmark small { font-size: 6px; letter-spacing: 1.5px; }
-  nav { gap: 18px; font-size: 10px; }
-  nav > a:nth-child(3) { display: none; }
+  .site-header nav { gap: 18px; font-size: 10px; }
+  .site-header nav > a:nth-child(3) { display: none; }
   .language-toggle { padding: 7px 8px; }
   .language-toggle > span:first-child { display: none; }
   .sky-stage { height: 850px; min-height: 850px; }
@@ -233,6 +235,7 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 30px; display: flex;
   .connect-section { flex-direction: column; align-items: flex-start; gap: 30px; padding: 50px 0; }
   .connect-section h2 { font-size: 30px; }
   .connect-button { padding: 17px 20px; }
+  .connect-links-label { flex-basis: 100%; margin-right: 0; }
   footer { flex-wrap: wrap; gap: 16px; padding: 23px 0; }
   .footer-name { flex-basis: 70%; }
   footer > span { order: 3; width: 100%; }
@@ -241,7 +244,7 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 30px; display: flex;
 @media (max-width: 360px) {
   .site-header { width: calc(100% - 30px); }
   .wordmark { font-size: 19px; }
-  nav { gap: 13px; }
+  .site-header nav { gap: 13px; }
   .hero-copy { top: 192px; }
   .hero-copy .eyebrow { letter-spacing: .5px; font-size: 6px; }
   .companions { width: 120vw; left: -10%; bottom: 105px; }
