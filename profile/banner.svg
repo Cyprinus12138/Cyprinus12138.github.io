@@ -1,15 +1,65 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title description">
-  <title id="title">Mr.Cyprinus</title>
-  <desc id="description">Stay Simple, Stay Naive. A minimal warm-white banner with a forest-green geometric monogram and a coral accent.</desc>
-  <rect width="1200" height="300" rx="20" fill="#F7F7F2"/>
-  <g fill="none" stroke="#DADDD5" stroke-width="1">
-    <path d="M48 48H1152M48 252H1152M930 48V252"/>
-    <path d="M990 83H1110M990 133H1110M990 183H1110M990 233H1110M990 83V233M1030 83V233M1070 83V233M1110 83V233"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title description">
+  <title id="title">Mr.Cyprinus — Code, curiosity &amp; the cosmos.</title>
+  <desc id="description">A romantic twilight sky with a golden sunset at the lower left, rose and violet clouds, and sparse stars over a deep blue sea. 追求星辰大海的浪漫主义技术工程师。</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#f7ad64"/>
+      <stop offset=".16" stop-color="#da6a82"/>
+      <stop offset=".34" stop-color="#754170"/>
+      <stop offset=".6" stop-color="#23234e"/>
+      <stop offset="1" stop-color="#080e20"/>
+    </linearGradient>
+    <radialGradient id="sunset" cx="0" cy="1" r=".85">
+      <stop offset="0" stop-color="#ffda8b" stop-opacity=".95"/>
+      <stop offset=".22" stop-color="#ff9d63" stop-opacity=".5"/>
+      <stop offset=".58" stop-color="#ee668c" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#ee668c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cloud" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffd099" stop-opacity=".45"/>
+      <stop offset=".4" stop-color="#ec83a7" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#a786d5" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4d344b"/>
+      <stop offset=".42" stop-color="#1b233d"/>
+      <stop offset="1" stop-color="#080e20"/>
+    </linearGradient>
+    <clipPath id="frame"><rect width="1200" height="320" rx="16"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="320" fill="url(#sky)"/>
+    <rect width="1200" height="320" fill="url(#sunset)"/>
+    <g fill="url(#cloud)">
+      <path d="M-50 226C145 174 238 198 409 172S688 111 887 124C703 145 572 196 400 192S118 213-50 251Z"/>
+      <path d="M-40 272C100 237 186 248 310 229S542 208 700 215C527 225 456 231 298 244S82 266-40 286Z" opacity=".75"/>
+      <path d="M513 72C658 30 773 54 882 37S1089 10 1224 22C1083 27 1004 48 883 47S654 62 513 79Z" opacity=".3"/>
+    </g>
+    <g fill="#fff3dc">
+      <circle cx="71" cy="29" r="1" opacity=".5"/>
+      <circle cx="277" cy="42" r=".8" opacity=".52"/>
+      <circle cx="451" cy="26" r="1" opacity=".6"/>
+      <circle cx="616" cy="66" r="1.1" opacity=".65"/>
+      <circle cx="777" cy="27" r=".8" opacity=".8"/>
+      <circle cx="840" cy="86" r="1.4" opacity=".82"/>
+      <circle cx="908" cy="40" r=".8" opacity=".55"/>
+      <circle cx="968" cy="173" r="1" opacity=".6"/>
+      <circle cx="1038" cy="37" r="1.2" opacity=".85"/>
+      <circle cx="1081" cy="124" r=".8" opacity=".64"/>
+      <circle cx="1146" cy="74" r="1.1" opacity=".8"/>
+      <circle cx="1134" cy="219" r=".8" opacity=".62"/>
+      <circle cx="851" cy="224" r=".7" opacity=".45"/>
+    </g>
+    <path d="M1006 83L1008 95L1020 97L1008 99L1006 111L1004 99L992 97L1004 95Z" fill="#ffe4ab"/>
+    <circle cx="1006" cy="97" r="20" fill="#ffdfa0" opacity=".035"/>
+    <path d="M0 286C194 280 326 288 507 283S865 287 1200 282V320H0Z" fill="url(#sea)"/>
+    <g fill="none" stroke="#e4a098" stroke-opacity=".16">
+      <path d="M28 295H205M256 295H350M73 307H292M328 306H422"/>
+    </g>
+    <text x="64" y="69" fill="#e9d9db" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="11" letter-spacing="3.5">MR.CYPRINUS / A PERSONAL UNIVERSE</text>
+    <text x="60" y="145" fill="#fff6e9" font-family="Georgia, 'Times New Roman', serif" font-size="55" letter-spacing="-1.3">Code, curiosity &amp; the cosmos.</text>
+    <text x="64" y="188" fill="#f6e4de" font-family="'Noto Serif SC', 'Songti SC', SimSun, serif" font-size="20" letter-spacing="2.2">追求星辰大海的浪漫主义技术工程师</text>
+    <text x="65" y="243" fill="#f9e0d4" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-style="italic" letter-spacing=".5">Stay simple. Stay naive.</text>
+    <text x="1135" y="290" text-anchor="end" fill="#c7c6df" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="9" letter-spacing="3">01 / TOWARD THE HORIZON</text>
   </g>
-  <text x="68" y="92" fill="#52615A" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="12" letter-spacing="3">CYPRINUS12138 / PERSONAL NOTES</text>
-  <text x="64" y="174" fill="#203A35" font-family="Georgia, 'Times New Roman', serif" font-size="66" letter-spacing="-2">Mr.Cyprinus</text>
-  <text x="68" y="218" fill="#52615A" font-family="Arial, Helvetica, sans-serif" font-size="19" letter-spacing="0.2">Stay Simple, Stay Naive.</text>
-  <circle cx="1050" cy="158" r="62" fill="#F7F7F2" stroke="#203A35" stroke-width="2"/>
-  <path d="M1075 124A42 42 0 1 0 1075 192" fill="none" stroke="#203A35" stroke-width="13" stroke-linecap="round"/>
-  <circle cx="1086" cy="158" r="7" fill="#D17A58"/>
 </svg>

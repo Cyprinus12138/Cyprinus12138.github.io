@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./banner.svg" alt="Mr.Cyprinus — Stay Simple, Stay Naive." width="100%" />
+  <img src="./banner.svg" alt="Mr.Cyprinus — Code, curiosity &amp; the cosmos. 追求星辰大海的浪漫主义技术工程师。" width="100%" />
 </p>
 
 <p align="center">
@@ -9,6 +9,10 @@
 </p>
 
 ### 你好，我是 Mr.Cyprinus. / Hi, I'm Mr.Cyprinus.
+
+追求星辰大海的浪漫主义技术工程师。以代码探索世界，也为好奇心和想象力留一片天空。
+
+A romantic engineer, reaching for the stars and the sea. Exploring the world through code, with room for curiosity and imagination.
 
 我的公开项目涵盖分布式向量搜索、服务可观测性，以及计算机视觉研究工具。
 
