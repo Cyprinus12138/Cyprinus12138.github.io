@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title description">
+  <title id="title">Mr.Cyprinus</title>
+  <desc id="description">Stay Simple, Stay Naive. A minimal warm-white banner with a forest-green geometric monogram and a coral accent.</desc>
+  <rect width="1200" height="300" rx="20" fill="#F7F7F2"/>
+  <g fill="none" stroke="#DADDD5" stroke-width="1">
+    <path d="M48 48H1152M48 252H1152M930 48V252"/>
+    <path d="M990 83H1110M990 133H1110M990 183H1110M990 233H1110M990 83V233M1030 83V233M1070 83V233M1110 83V233"/>
+  </g>
+  <text x="68" y="92" fill="#52615A" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="12" letter-spacing="3">CYPRINUS12138 / PERSONAL NOTES</text>
+  <text x="64" y="174" fill="#203A35" font-family="Georgia, 'Times New Roman', serif" font-size="66" letter-spacing="-2">Mr.Cyprinus</text>
+  <text x="68" y="218" fill="#52615A" font-family="Arial, Helvetica, sans-serif" font-size="19" letter-spacing="0.2">Stay Simple, Stay Naive.</text>
+  <circle cx="1050" cy="158" r="62" fill="#F7F7F2" stroke="#203A35" stroke-width="2"/>
+  <path d="M1075 124A42 42 0 1 0 1075 192" fill="none" stroke="#203A35" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="1086" cy="158" r="7" fill="#D17A58"/>
+</svg>
