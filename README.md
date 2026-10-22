@@ -1,6 +1,6 @@
 # Mr.Cyprinus · Personal website
 
-个人主页：[cyprinus12138.github.io](https://cyprinus12138.github.io/)
+个人主页：[cyprinus.algonavis.com](https://cyprinus.algonavis.com/)
 
 A lightweight bilingual personal website built with plain HTML, CSS, and JavaScript. No framework, build step, external fonts, analytics, or runtime dependencies.
 
