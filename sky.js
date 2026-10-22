@@ -88,28 +88,27 @@
   function buildAtmosphere() {
     const layer = makeCanvas(width, height);
     const ctx = layer.getContext('2d');
+    const mobile = width <= 800;
     const base = ctx.createLinearGradient(width * 0.48, 0, width * 0.36, height);
     base.addColorStop(0, '#080f29');
-    base.addColorStop(0.30, '#111a3d');
-    base.addColorStop(0.58, '#252047');
-    base.addColorStop(0.83, '#5c345a');
-    base.addColorStop(1, '#111829');
+    base.addColorStop(0.30, '#101830');
+    base.addColorStop(0.58, '#171c35');
+    base.addColorStop(0.83, '#222038');
+    base.addColorStop(1, '#0d1528');
     ctx.fillStyle = base;
     ctx.fillRect(0, 0, width, height);
 
-    // The sun has already dropped below the horizon. Its light travels across
-    // the left side; the upper right stays quiet enough to hold the title.
-    ellipseGlow(ctx, width * 0.02, height * 0.81, width * 0.92, height * 0.73, [
-      [0, 'rgba(242, 125, 70, .88)'], [.26, 'rgba(219, 76, 85, .68)'],
-      [.56, 'rgba(137, 49, 112, .40)'], [1, 'rgba(76, 36, 103, 0)']
+    // The remaining warmth belongs to the figures. Leave the title's sky
+    // almost unlit, especially above the illustration in the mobile layout.
+    ellipseGlow(ctx, width * (mobile ? .40 : .22), height * (mobile ? .79 : .75),
+      width * (mobile ? .74 : .40), height * (mobile ? .22 : .34), [
+      [0, 'rgba(235, 123, 76, .72)'], [.28, 'rgba(203, 84, 87, .46)'],
+      [.64, 'rgba(119, 53, 91, .18)'], [1, 'rgba(76, 36, 103, 0)']
     ]);
-    ellipseGlow(ctx, width * 0.10, height * 0.91, width * 0.62, height * 0.31, [
-      [0, 'rgba(255, 197, 110, .88)'], [.30, 'rgba(247, 140, 76, .69)'],
-      [.66, 'rgba(232, 88, 89, .22)'], [1, 'rgba(213, 66, 94, 0)']
-    ]);
-    ellipseGlow(ctx, width * 0.38, height * 0.34, width * 0.58, height * 0.59, [
-      [0, 'rgba(69, 50, 142, .22)'], [.50, 'rgba(64, 43, 123, .09)'],
-      [1, 'rgba(47, 37, 101, 0)']
+    ellipseGlow(ctx, width * (mobile ? .37 : .21), height * (mobile ? .82 : .81),
+      width * (mobile ? .58 : .31), height * (mobile ? .14 : .21), [
+      [0, 'rgba(255, 191, 110, .80)'], [.28, 'rgba(240, 140, 79, .52)'],
+      [.65, 'rgba(214, 92, 88, .15)'], [1, 'rgba(213, 66, 94, 0)']
     ]);
 
     // A distant, nearly invisible coast grounds the composition without
@@ -163,28 +162,38 @@
 
   function buildStars() {
     const random = randomGenerator(481516);
-    const count = Math.round(clamp(width * height / 4900, 95, 290));
+    const mobile = width <= 800;
+    const count = Math.round(clamp(width * height / 9800, 48, 145));
     const result = [];
     for (let i = 0; i < count; i += 1) {
       const x = random();
-      const y = random() * .78;
+      // A slight downward bias leaves more breathing room in the upper sky.
+      const y = .06 + Math.pow(random(), .65) * .73;
       // Stars disappear naturally into the bright western dusk.
       const darkness = clamp(.90 - y * .94 + x * .43, .08, 1);
       if (random() > darkness) continue;
+      const upperQuiet = lerp(mobile ? .10 : .28, 1, smoothstep(.40, .65, y));
+      const textQuiet = !mobile && x > .51 && y > .17 && y < .68 ? .28 : 1;
       result.push({
         x, y,
-        radius: .38 + Math.pow(random(), 3) * 1.02,
-        alpha: (.30 + random() * .49) * darkness,
+        radius: .32 + Math.pow(random(), 3) * .76,
+        alpha: (.23 + random() * .38) * darkness * upperQuiet * textQuiet,
         phase: random() * Math.PI * 2,
         speed: .35 + random() * .55,
         warm: random() > .78,
         cross: false
       });
     }
-    // Just a few guiding stars; these should never look like a sparkle filter.
-    [{ x: .76, y: .15, radius: 1.65 }, { x: .37, y: .27, radius: 1.2 },
-      { x: .91, y: .46, radius: 1.05 }].forEach((star, index) => {
-      result.push({ ...star, alpha: .72, phase: index * 2, speed: .48, warm: true, cross: true });
+    // One guiding star above the figures, away from both text compositions.
+    result.push({
+      x: mobile ? .84 : .40,
+      y: mobile ? .58 : .32,
+      radius: 1.1,
+      alpha: .53,
+      phase: 0,
+      speed: .48,
+      warm: true,
+      cross: true
     });
     return result;
   }
@@ -216,11 +225,12 @@
 
   function drawMeteor(time) {
     if (time >= nextMeteor && !meteor) {
+      const mobile = width <= 800;
       meteor = {
         start: time,
-        x: width * (.49 + Math.random() * .37),
-        y: height * (.08 + Math.random() * .17),
-        distance: clamp(width * .18, 120, 260),
+        x: width * (mobile ? .75 + Math.random() * .12 : .28 + Math.random() * .14),
+        y: height * (mobile ? .60 + Math.random() * .05 : .11 + Math.random() * .10),
+        distance: clamp(width * .13, 70, 160),
         duration: 1.25 + Math.random() * .35
       };
       nextMeteor = time + 10 + Math.random() * 8;
@@ -233,8 +243,8 @@
     }
     const x = meteor.x - meteor.distance * progress;
     const y = meteor.y + meteor.distance * progress * .44;
-    const tail = Math.min(progress * meteor.distance, 68);
-    const opacity = Math.sin(Math.PI * progress) * .6;
+    const tail = Math.min(progress * meteor.distance, 44);
+    const opacity = Math.sin(Math.PI * progress) * .38;
     const gradient = context.createLinearGradient(x, y, x + tail, y - tail * .44);
     gradient.addColorStop(0, `rgba(247, 237, 219, ${opacity})`);
     gradient.addColorStop(.18, `rgba(208, 216, 255, ${opacity * .64})`);
@@ -254,12 +264,15 @@
     context.drawImage(atmosphere, 0, 0, width, height);
     drawStars(time);
 
+    const mobile = width <= 800;
     clouds.forEach(({ image, level }) => {
       const drift = Math.sin(time * (.015 + level * .006) + level * 1.6) * (16 + level * 8);
-      const y = height * (.28 + level * .15) + Math.sin(time * .012 + level) * 3;
-      context.globalAlpha = level === 0 ? .86 : .66;
+      const y = height * (mobile ? .63 + level * .09 : .48 + level * .12)
+        + Math.sin(time * .012 + level) * 3;
+      context.globalAlpha = level === 0 ? .43 : .30;
       context.drawImage(image, -width * .09 + drift + pointer.x * (3 + level),
-        y + pointer.y * 2, width * 1.18, height * (.64 - level * .10));
+        y + pointer.y * 2, width * (mobile ? 1.18 : .82),
+        height * (mobile ? .28 - level * .06 : .42 - level * .09));
     });
     context.globalAlpha = 1;
     if (!paused) drawMeteor(time);

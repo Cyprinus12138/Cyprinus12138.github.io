@@ -1,48 +1,48 @@
 /* Keep both language versions together when updating the page. */
 const copy = {
   zh: {
-    skip: '跳转到内容', navigation: '主导航', navWork: '探索', navAbout: '关于', navConnect: '联系',
-    heroEyebrow: 'ENGINEER BY TRADE · ROMANTIC AT HEART', heroHello: '你好，我是', heroPunctuation: '。',
-    heroTitle: '以代码为舟，\n赴星辰大海。', heroQuote: '理性构筑世界，浪漫指引远方。',
-    heroDescription: '一位追求星辰大海的浪漫主义技术工程师。', exploreWork: '探索我的宇宙',
+    skip: '跳转到内容', navigation: '主导航', navWork: '项目', navAbout: '关于', navConnect: '联系',
+    heroHello: '你好，我是', heroPunctuation: '。',
+    heroTitle: '以代码为舟，\n赴星辰大海。',
+    heroDescription: '这里收集我的开源项目和工程实验。', exploreWork: '看看我的项目',
     companionsAlt: 'Claude 娘与 DeepSeek 娘牵手向星空奔跑的同人立绘',
-    scrollToExplore: '向下，继续探索', pauseSky: '暂停星空', resumeSky: '播放星空',
-    visualCaption: '由好奇心连接。', interests: '技术方向', exploring: '正在探索', distributed: '分布式系统', observability: '可观测性', vision: '计算机视觉', recsys: '推荐系统', agents: 'AI Agent', llmInfra: 'LLM Infra',
-    selectedWork: '探索的坐标', workTitle: '把探索，写成作品。', allRepos: '所有仓库',
-    vectoryDescription: '让向量搜索走向分布式。基于 FAISS，支持自动分片、副本与索引热加载，通过 etcd 协调集群。',
-    otelginDescription: '看见每一次请求。为 Gin 服务集成 OpenTelemetry 链路追踪与 HTTP 指标的中间件。',
-    fpvecDescription: '从图像到几何。面向户型图矢量化的研究代码、基准数据与评估工具，探索几何表达与编辑成本。',
+    pauseSky: '暂停星空', resumeSky: '播放星空',
+    workTitle: '精选项目', allRepos: '所有仓库',
+    vectoryDescription: '基于 FAISS 的分布式向量搜索引擎，支持分片、副本和索引热加载，通过 etcd 协调集群。',
+    otelginDescription: '为 Gin 服务集成 OpenTelemetry 链路追踪与 HTTP 指标的中间件。',
+    fpvecDescription: '面向户型图矢量化的研究代码、基准数据与评估工具，包含标注修正和编辑成本指标。',
     viewSource: '查看源码 ↗', geometry: '几何表达', benchmarks: '基准评估',
-    aboutLabel: '关于我', aboutTitle: '脚踏实地，\n也仰望星空。',
-    aboutLead: '用工程让想法落地，用好奇心把目光投向更远的地方。',
-    aboutText: '我感兴趣的东西很多：从分布式系统、可观测性，到推荐系统、LLM Infra 与 AI Agent，再到计算机视觉。它们看似分散，背后其实是同一件事：拓宽机器的能力边界，重塑人与机器打交道的方式，最终改变世界，也改变每一个人的生活。',
-    basedIn: '所在城市', company: '前公司', onlineAs: '在网上', alsoOn: '其他平台', alsoOnAria: '其他账号',
-    connectLabel: '相遇在这片星空', connectTitle: '星海很大，\n很高兴遇见你。',
-    connectDescription: '对某个项目感兴趣？欢迎在 GitHub 上交流。', findOnGithub: '在 GitHub 找到我',
-    footerNote: '心有热望，奔赴星海。', backTop: '回到星空 ↑',
-    description: 'Mr.Cyprinus 的个人宇宙。一位追求星辰大海的浪漫主义技术工程师，关注分布式系统、可观测性、推荐系统、LLM Infra、AI Agent 与计算机视觉。'
+    aboutTitle: '关于我',
+    aboutLead: '目前在新加坡，曾就职于 Shopee 和 ByteDance（AML）。',
+    aboutText: '我关注分布式系统、可观测性、推荐系统、LLM Infra、AI Agent 和计算机视觉。上面的项目是其中一部分实践，其他代码与实验可以在 GitHub 和 Hugging Face 找到。',
+    alsoOn: '其他平台', alsoOnAria: '其他账号',
+    connectTitle: '找到我',
+    connectDescription: '项目相关的问题，欢迎在对应仓库提 issue。你也可以在这些平台找到我。', findOnGithub: '在 GitHub 找到我',
+    footerNote: 'Stay simple. Stay naive.', backTop: '回到顶部 ↑',
+    title: 'Mr.Cyprinus — 个人主页',
+    description: 'Mr.Cyprinus 的个人主页。开源项目、工程实验、技术方向与工作经历。'
   },
   en: {
-    skip: 'Skip to content', navigation: 'Main navigation', navWork: 'Work', navAbout: 'About', navConnect: 'Connect',
-    heroEyebrow: 'ENGINEER BY TRADE · ROMANTIC AT HEART', heroHello: 'Hello, I’m', heroPunctuation: '.',
-    heroTitle: 'Built with logic.\nBound for the stars.', heroQuote: 'A grounded mind. A skyward heart.',
-    heroDescription: 'An engineer with a romantic heart, reaching for the stars and the open sea.', exploreWork: 'Explore my universe',
+    skip: 'Skip to content', navigation: 'Main navigation', navWork: 'Projects', navAbout: 'About', navConnect: 'Contact',
+    heroHello: 'Hello, I’m', heroPunctuation: '.',
+    heroTitle: 'With code as my craft,\ntoward the stars.',
+    heroDescription: 'These are my open-source projects and engineering experiments.', exploreWork: 'View my projects',
     companionsAlt: 'Fan-art companions Claude and DeepSeek holding hands and running toward the stars',
-    scrollToExplore: 'KEEP EXPLORING', pauseSky: 'Pause sky', resumeSky: 'Play sky',
-    visualCaption: 'Connected by curiosity.', interests: 'Areas of interest', exploring: 'EXPLORING', distributed: 'Distributed systems', observability: 'Observability', vision: 'Computer vision', recsys: 'Recommender systems', agents: 'AI agents', llmInfra: 'LLM infra',
-    selectedWork: 'COORDINATES OF CURIOSITY', workTitle: 'Ideas with a horizon.', allRepos: 'All repositories',
-    vectoryDescription: 'Vector search, distributed. Built on FAISS with automatic sharding, replication, hot index reloads, and etcd-based coordination.',
-    otelginDescription: 'A closer look at every request. OpenTelemetry tracing and HTTP metrics middleware for Gin services.',
-    fpvecDescription: 'From images to geometry. Research code, benchmarks, and evaluation tools for floorplan vectorization, geometry, and edit cost.',
+    pauseSky: 'Pause sky', resumeSky: 'Play sky',
+    workTitle: 'Selected projects', allRepos: 'All repositories',
+    vectoryDescription: 'A distributed vector search engine built on FAISS, with sharding, replication, hot index reloads, and etcd-based coordination.',
+    otelginDescription: 'OpenTelemetry tracing and HTTP metrics middleware for Gin services.',
+    fpvecDescription: 'Research code, benchmarks, and evaluation tools for floorplan vectorization, including annotation corrections and an edit-cost metric.',
     viewSource: 'Explore the source ↗', geometry: 'Geometry', benchmarks: 'Benchmarks',
-    aboutLabel: 'ABOUT ME', aboutTitle: 'Feet on the ground.\nEyes on the stars.',
-    aboutLead: 'Engineering brings ideas to life. Curiosity makes room for what lies beyond.',
-    aboutText: 'My interests range widely, from distributed systems and observability to recommender systems, LLM infrastructure, AI agents, and computer vision. They may look scattered, but one thread runs through them all: extending what machines can do, reshaping how people and machines interact, and, in the end, changing the world and how we live in it.',
-    basedIn: 'BASED IN', company: 'PREVIOUSLY AT', onlineAs: 'ONLINE AS', alsoOn: 'ALSO ON', alsoOnAria: 'Other profiles',
-    connectLabel: 'UNDER THE SAME SKY', connectTitle: 'A vast universe.\nA welcome encounter.',
-    connectDescription: 'Interested in a project? Let’s talk on GitHub.', findOnGithub: 'Find me on GitHub',
-    footerNote: 'Stay curious. Set sail for the stars.', backTop: 'Back to the stars ↑',
-    description: 'The personal universe of Mr.Cyprinus. An engineer with a romantic heart, exploring distributed systems, observability, recommender systems, LLM infra, AI agents, and computer vision.'
+    aboutTitle: 'About me',
+    aboutLead: 'Based in Singapore. Previously at Shopee and ByteDance (AML).',
+    aboutText: 'My interests include distributed systems, observability, recommender systems, LLM infrastructure, AI agents, and computer vision. The projects above cover some of that work; more code and experiments are on GitHub and Hugging Face.',
+    alsoOn: 'Also on', alsoOnAria: 'Other profiles',
+    connectTitle: 'Find me online',
+    connectDescription: 'For project questions, open an issue in the relevant repository. You can also find me on these platforms.', findOnGithub: 'Find me on GitHub',
+    footerNote: 'Stay simple. Stay naive.', backTop: 'Back to top ↑',
+    title: 'Mr.Cyprinus — Personal website',
+    description: 'Open-source projects, engineering experiments, and the work of Mr.Cyprinus.'
   }
 };
 
@@ -76,6 +76,9 @@ function setLanguage(next) {
   document.querySelector('#language-label').textContent = language === 'zh' ? 'EN' : '中文';
   languageButton.setAttribute('aria-label', language === 'zh' ? 'Switch to English' : '切换到中文');
   document.querySelector('meta[name="description"]').content = copy[language].description;
+  document.querySelector('meta[property="og:description"]').content = copy[language].description;
+  document.querySelector('meta[property="og:title"]').content = copy[language].title;
+  document.title = copy[language].title;
   updateMotionLabel();
   try { localStorage.setItem('cyprinus-language', language); } catch { /* Storage is optional. */ }
 }
