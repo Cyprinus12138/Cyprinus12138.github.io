@@ -88,27 +88,28 @@
   function buildAtmosphere() {
     const layer = makeCanvas(width, height);
     const ctx = layer.getContext('2d');
-    const mobile = width <= 800;
     const base = ctx.createLinearGradient(width * 0.48, 0, width * 0.36, height);
     base.addColorStop(0, '#080f29');
-    base.addColorStop(0.30, '#101b41');
-    base.addColorStop(0.58, '#19204b');
-    base.addColorStop(0.83, '#292041');
-    base.addColorStop(1, '#0d1528');
+    base.addColorStop(0.30, '#111a3d');
+    base.addColorStop(0.58, '#252047');
+    base.addColorStop(0.83, '#5c345a');
+    base.addColorStop(1, '#111829');
     ctx.fillStyle = base;
     ctx.fillRect(0, 0, width, height);
 
-    // The remaining warmth belongs to the figures. Leave the title's sky
-    // almost unlit, especially above the illustration in the mobile layout.
-    ellipseGlow(ctx, width * (mobile ? .40 : .22), height * (mobile ? .79 : .75),
-      width * (mobile ? .74 : .40), height * (mobile ? .22 : .34), [
-      [0, 'rgba(235, 123, 76, .72)'], [.28, 'rgba(203, 84, 87, .46)'],
-      [.64, 'rgba(119, 53, 91, .18)'], [1, 'rgba(76, 36, 103, 0)']
+    // The sun has already dropped below the horizon. Its light travels across
+    // the left side; the upper right stays quiet enough to hold the title.
+    ellipseGlow(ctx, width * 0.02, height * 0.81, width * 0.92, height * 0.73, [
+      [0, 'rgba(242, 125, 70, .88)'], [.26, 'rgba(219, 76, 85, .68)'],
+      [.56, 'rgba(137, 49, 112, .40)'], [1, 'rgba(76, 36, 103, 0)']
     ]);
-    ellipseGlow(ctx, width * (mobile ? .37 : .21), height * (mobile ? .82 : .81),
-      width * (mobile ? .58 : .31), height * (mobile ? .14 : .21), [
-      [0, 'rgba(255, 191, 110, .80)'], [.28, 'rgba(240, 140, 79, .52)'],
-      [.65, 'rgba(214, 92, 88, .15)'], [1, 'rgba(213, 66, 94, 0)']
+    ellipseGlow(ctx, width * 0.10, height * 0.91, width * 0.62, height * 0.31, [
+      [0, 'rgba(255, 197, 110, .88)'], [.30, 'rgba(247, 140, 76, .69)'],
+      [.66, 'rgba(232, 88, 89, .22)'], [1, 'rgba(213, 66, 94, 0)']
+    ]);
+    ellipseGlow(ctx, width * 0.38, height * 0.34, width * 0.58, height * 0.59, [
+      [0, 'rgba(69, 50, 142, .22)'], [.50, 'rgba(64, 43, 123, .09)'],
+      [1, 'rgba(47, 37, 101, 0)']
     ]);
 
     // A distant, nearly invisible coast grounds the composition without
@@ -266,15 +267,12 @@
     context.drawImage(atmosphere, 0, 0, width, height);
     drawStars(time);
 
-    const mobile = width <= 800;
     clouds.forEach(({ image, level }) => {
       const drift = Math.sin(time * (.015 + level * .006) + level * 1.6) * (16 + level * 8);
-      const y = height * (mobile ? .63 + level * .09 : .48 + level * .12)
-        + Math.sin(time * .012 + level) * 3;
-      context.globalAlpha = level === 0 ? .43 : .30;
+      const y = height * (.28 + level * .15) + Math.sin(time * .012 + level) * 3;
+      context.globalAlpha = level === 0 ? .86 : .66;
       context.drawImage(image, -width * .09 + drift + pointer.x * (3 + level),
-        y + pointer.y * 2, width * (mobile ? 1.18 : .82),
-        height * (mobile ? .28 - level * .06 : .42 - level * .09));
+        y + pointer.y * 2, width * 1.18, height * (.64 - level * .10));
     });
     context.globalAlpha = 1;
     if (!paused) drawMeteor(time);

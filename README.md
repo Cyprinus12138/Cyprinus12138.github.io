@@ -18,7 +18,7 @@ python3 -m http.server 4173 --bind 127.0.0.1
 - `script.js`：完整中英文文案；修改文字时同步更新两种语言。
 - `styles.css`：配色、排版与响应式布局。
 - `assets/`：网站图标与分享图。
-- `profile/README.md` 和 `profile/banner.svg`：GitHub 个人资料页的内容副本。
+- `profile/README.md`：GitHub 个人资料页的内容副本，横幅与网站共用 `assets/social-starlight.jpg`。
 
 Language priority: `?lang=en` / `?lang=zh`, then an explicitly saved choice, then the browser language (Chinese for Chinese browsers, English otherwise). Switching languages updates the URL without reloading and preserves other parameters and the section anchor. The page remains readable if JavaScript or browser storage is unavailable.
 
@@ -30,7 +30,7 @@ Push changes to `main`; GitHub Pages publishes the static files directly. No sec
 
 ## GitHub 个人资料 / GitHub Profile
 
-GitHub Profile uses a separate public repository, `Cyprinus12138/Cyprinus12138`. Place the two files from `profile/` at that repository’s root. Updating this directory does not automatically update the separate profile repository.
+GitHub Profile uses a separate public repository, `Cyprinus12138/Cyprinus12138`. Copy `profile/README.md` to that repository’s root; its banner references the published website image. Updating this directory does not automatically update the separate profile repository.
 
 ## 内容来源 / Content sources
 

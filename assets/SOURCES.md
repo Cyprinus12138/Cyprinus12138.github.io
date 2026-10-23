@@ -49,3 +49,7 @@ This version does **not** embed that portrait. No matching Claude Live2D model o
 ## Attribution scope
 
 Claude, Anthropic, and DeepSeek names identify the community characters' inspirations. This personal website and its generated character illustration are unofficial and are not endorsed by those companies. The research links above are sources and future options, not a claim that their creators authored or licensed `companions.png`.
+
+### `social-starlight.jpg`
+
+Regenerated with the built-in image generation tool for the website social preview and GitHub profile banner. Prompt: preserve the two running companions and the painted golden sunset transitioning to blue starry night; retain one Chinese headline, Mr.Cyprinus, a factual project description, and the domain; remove repeated identity slogans. Exported at 1200 × 630. The same unofficial fan-art attribution scope as `companions.png` applies.
