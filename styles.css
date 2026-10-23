@@ -200,3 +200,8 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 30px; display: flex;
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+.proprop-project { display: block; margin-bottom: 18px; background: radial-gradient(ellipse at 100% 0%, #49345e40, transparent 65%), #10172c; }
+.proprop-project p { min-height: 0; max-width: 780px; }
+
+.proprop-project .project-action { margin-top: 12px; }
