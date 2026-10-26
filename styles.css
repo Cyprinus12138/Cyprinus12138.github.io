@@ -59,13 +59,13 @@ html[lang='en'] .hero-copy h1 { font: 400 clamp(36px, 3.8vw, 56px)/1.22 var(--se
 .section-heading h2, .about-section h2, .connect-section h2 { font: 400 32px/1.5 var(--sans); letter-spacing: 0; margin-top: 14px; }
 html[lang='en'] .section-heading h2, html[lang='en'] .about-section h2, html[lang='en'] .connect-section h2 { font-family: var(--serif); letter-spacing: -.6px; }
 .project { display: block; transition: border-color .25s, transform .25s; }
-.project:hover { transform: translateY(-4px); border-color: #c39bb364; }
+a.project:hover { transform: translateY(-4px); border-color: #c39bb364; }
 .featured-project { display: grid; grid-template-columns: 1fr 1fr; background: radial-gradient(ellipse at 20% 0%, #49345e35, transparent 60%), #10172c; border: 1px solid #aca8cc2a; border-radius: 5px; overflow: hidden; min-height: 340px; }
 .project-copy { padding: 39px 39px 34px; }
 .project-category { font: 8px var(--mono); letter-spacing: 1.7px; color: #baa3c8; }
 .project h3 { font: 400 34px var(--serif); letter-spacing: -.5px; margin: 18px 0 15px; display: flex; align-items: center; justify-content: space-between; color: #f0e6f2; }
 .project h3 > span { font: 300 23px var(--sans); color: #c8a2b6; transition: transform .2s; }
-.project:hover h3 > span { transform: translate(3px,-3px); }
+a.project:hover h3 > span { transform: translate(3px,-3px); }
 .project p { max-width: 410px; font-size: 14px; line-height: 1.9; color: #b0abc4; }
 .project-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 23px; }
 .project-tags > span { border: 1px solid #b7a7d12b; border-radius: 3px; color: #b7aecb; font: 9px var(--mono); padding: 5px 8px; }
@@ -201,7 +201,32 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 30px; display: flex;
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
-.proprop-project { display: block; margin-bottom: 18px; background: radial-gradient(ellipse at 100% 0%, #49345e40, transparent 65%), #10172c; }
-.proprop-project p { min-height: 0; max-width: 780px; }
-
-.proprop-project .project-action { margin-top: 12px; }
+.proprop-project { margin-bottom: 24px; background: radial-gradient(ellipse at 100% 0%, #49345e40, transparent 65%), #10172c; border: 1px solid #aca8cc2a; border-radius: 5px; overflow: hidden; }
+.proprop-overview { padding: 34px 38px; }
+.proprop-overview h3 { margin: 15px 0; }
+.proprop-overview h3 a { display: flex; width: 100%; align-items: center; justify-content: space-between; }
+.proprop-overview h3 span { font: 300 23px var(--sans); color: #c8a2b6; }
+.proprop-overview p { max-width: 780px; }
+.proprop-overview .project-action { margin-top: 24px; }
+.proprop-components { padding: 28px 38px 34px; border-top: 1px solid #aca8cc25; background: #0a102466; }
+.proprop-components h4 { font-size: 16px; font-weight: 500; color: #e4dce9; margin: 0 0 8px; }
+.proprop-components .components-intro { margin: 0 0 25px; max-width: none; font-size: 13px; }
+.component-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.component-card { display: flex; flex-direction: column; padding: 0 24px 0 0; border-right: 1px solid #aca8cc25; }
+.component-card:last-child { border-right: 0; padding-right: 0; }
+.component-kind { font: 8px var(--mono); letter-spacing: 1.3px; color: #ba9fc7; }
+.component-card h5 { display: flex; justify-content: space-between; gap: 8px; font: 500 16px var(--mono); color: #f0e6f2; overflow-wrap: anywhere; margin: 12px 0 8px; }
+.component-card h5 span { color: #c8a2b6; flex-shrink: 0; }
+.component-card p { margin: 0 0 18px; font-size: 13px; line-height: 1.8; }
+.component-stack { margin-top: auto; font: 9px/1.7 var(--mono); color: #b7aecb; }
+.component-card:hover h5, .proprop-overview h3 a:hover { color: var(--gold); }
+.component-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 7px; }
+@media (max-width: 900px) {
+  .component-list { grid-template-columns: 1fr; gap: 22px; }
+  .component-card { padding: 0 0 22px; border-right: 0; border-bottom: 1px solid #aca8cc25; }
+  .component-card:last-child { border-bottom: 0; padding-bottom: 0; }
+  .component-card p { max-width: 680px; }
+}
+@media (max-width: 600px) {
+  .proprop-overview, .proprop-components { padding: 27px; }
+}

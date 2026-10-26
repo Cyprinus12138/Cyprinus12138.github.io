@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cyprinus.algonavis.com/assets/social-starlight.jpg" alt="Mr.Cyprinus — 以代码为舟，赴星辰大海。From sunset toward the stars." width="100%" />
+  <img src="./banner.svg" alt="Mr.Cyprinus — 以代码为舟，赴星辰大海。From sunset toward the stars." width="100%" />
 </p>
 
 <p align="center">
@@ -27,9 +27,26 @@ Interested in distributed systems, observability, recommender systems, LLM infra
 
 #### [ProProp ↗](https://proprop.algonavis.com/)
 
-面向新加坡住宅市场的 AI 原生房产咨询平台，连接买家、卖家与持牌经纪人。独立完成架构、开发与上线：Go 多服务后端和 PostgreSQL/PostGIS 数据平台，支持 Web、管理后台、iOS 与 Telegram。
+面向新加坡住宅市场的 AI 原生房产咨询平台。独立设计并上线，连接买家、卖家与持牌经纪人，支持 Web、iOS 与 Telegram。
 
-An AI-native property advisory platform for Singapore residential real estate, connecting buyers, sellers, and licensed agents. Architected, built, and launched solo: a multi-service Go backend and PostgreSQL/PostGIS data platform serving web, admin, iOS, and Telegram clients.
+An AI-native property advisory platform for Singapore residential real estate. Designed and launched solo, connecting buyers, sellers, and licensed agents across web, iOS, and Telegram.
+
+**开源组件 / Open-source components**
+
+源自 ProProp 生产实践的三个独立组件。 / Three standalone components from ProProp’s production systems.
+
+| 组件 / Component | 做什么 / What it does |
+| --- | --- |
+| [dialogram](https://github.com/Cyprinus12138/dialogram)<br><sub>Go · MCP · Generative UI</sub> | Go Agent runtime，统一模型接口，支持生成式 UI、人工介入和可恢复流式响应。<br><br>A provider-neutral Go agent runtime with generative UI, human-in-the-loop pauses, and resumable streams. |
+| [sg-property-engine](https://github.com/Cyprinus12138/sg-property-engine)<br><sub>Go · PostGIS · MCP</sub> | 定时同步新加坡官方房产数据到 PostgreSQL / PostGIS，通过空间查询 API 和 MCP 工具提供服务。<br><br>Scheduled ingestion of Singapore property data into PostgreSQL / PostGIS, served through spatial query APIs and MCP tools. |
+| [fpextract](https://github.com/Cyprinus12138/fpextract)<br><sub>Python · Vision LLM · OpenCV</sub> | 用视觉模型从户型图提取结构化数据，支持批量任务恢复、OpenCV 裁切修正及带来源与置信度的项目汇总。<br><br>Structured floor-plan extraction with vision models, resumable batches, OpenCV-refined crops, and project rollups with provenance and confidence. |
+
+<details>
+<summary>平台实现 / Platform engineering</summary>
+
+Go 多服务后端与 PostgreSQL / PostGIS 数据平台，配套 Web、管理后台、iOS 和 Telegram 客户端。
+
+Multi-service Go backend and PostgreSQL / PostGIS data platform serving web, admin, iOS, and Telegram clients.
 
 从零实现不依赖框架的 LLM Agent runtime，支持 53 个生产工具、生成式 UI 和人工介入；以确定性校验拦截缺乏依据的受监管数值，并在 CI 中运行每夜 LLM-as-judge 评估。
 
@@ -41,7 +58,8 @@ Built a provider-neutral LLM agent runtime from scratch, without a framework: 53
 
 Built the data platform end to end: scheduled ingestion of official property data into the geospatial store, plus a Qwen-VL vision pipeline extracting structured unit data from ~30,000 floor plans for the advisory knowledge base.
 
-`Go` · `PostgreSQL / PostGIS` · `React / TypeScript` · `LLM Agents`
+
+</details>
 
 #### [Vectory ↗](https://github.com/Cyprinus12138/vectory)
 
