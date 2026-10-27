@@ -2,7 +2,7 @@
 
 个人主页：[cyprinus.algonavis.com](https://cyprinus.algonavis.com/)
 
-A lightweight bilingual personal website built with plain HTML, CSS, and JavaScript. No framework, build step, external fonts, analytics, or runtime dependencies.
+A lightweight bilingual personal website built with plain HTML, CSS, and JavaScript. No framework, build step, or external fonts. Cloudflare Web Analytics runs only on the production hostname.
 
 ## 本地预览 / Preview
 
@@ -21,6 +21,12 @@ python3 -m http.server 4173 --bind 127.0.0.1
 - `profile/README.md` 和 `profile/banner.svg`：GitHub 个人资料页的内容副本及独立窄幅横幅。
 
 Language priority: `?lang=en` / `?lang=zh`, then an explicitly saved choice, then the browser language (Chinese for Chinese browsers, English otherwise). Switching languages updates the URL without reloading and preserves other parameters and the section anchor. The page remains readable if JavaScript or browser storage is unavailable.
+
+## 流量统计 / Web analytics
+
+`analytics.js` loads the Cloudflare Web Analytics beacon only on `cyprinus.algonavis.com`; localhost, preview hosts, and the default GitHub Pages hostname are excluded. The beacon token is a public site identifier, not an API credential. Keep Cloudflare automatic snippet injection disabled for this hostname while using this manual installation to avoid duplicate collection.
+
+View the dashboard in Cloudflare → Observability → Analytics → Web analytics → `cyprinus.algonavis.com`. Metrics include page views, visits, country, referrer, device, and web performance. Visits are not unique people. Collection begins after installation; historical traffic cannot be reconstructed by the beacon.
 
 ## GitHub Pages
 
